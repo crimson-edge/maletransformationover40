@@ -10,18 +10,31 @@ interface Props {
 
 const { title, description = "Transform your life after 40 with proven fitness and wellness strategies" } = Astro.props;
 
-const productSchema = {
+const schema = {
   "@context": "https://schema.org",
-  "@type": "Product",
-  "name": "Male Transformation Over 40 Program",
-  "description": "Fitness and nutrition program specifically designed for men over 40",
-  "offers": {
+  "@type": "WebSite",
+  "name": "Male Transformation Over 40",
+  "url": "https://maletransformation.me",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://maletransformation.me/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  },
+  "offers": [{
     "@type": "Offer",
+    "itemOffered": {
+      "@type": "Product",
+      "name": "Male Transformation Over 40 Program",
+      "description": "Fitness and nutrition program specifically designed for men over 40"
+    },
     "price": "297.00",
     "priceCurrency": "USD",
     "availability": "https://schema.org/InStock",
     "url": "https://maletransformation.me"
-  }
+  }]
 };
 ---
 
@@ -35,7 +48,7 @@ const productSchema = {
     <title>{title} | Male Transformation Over 40</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="/fontawesome/css/all.min.css" rel="stylesheet">
-    <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1FEHCV1BVF"></script>
     <script>
