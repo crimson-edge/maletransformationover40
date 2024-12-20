@@ -9,6 +9,20 @@ interface Props {
 }
 
 const { title, description = "Transform your life after 40 with proven fitness and wellness strategies" } = Astro.props;
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Male Transformation Over 40 Program",
+  "description": "Fitness and nutrition program specifically designed for men over 40",
+  "offers": {
+    "@type": "Offer",
+    "price": "297.00",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "url": "https://maletransformation.me"
+  }
+};
 ---
 
 <!doctype html>
@@ -21,14 +35,15 @@ const { title, description = "Transform your life after 40 with proven fitness a
     <title>{title} | Male Transformation Over 40</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="/fontawesome/css/all.min.css" rel="stylesheet">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1FEHCV1BVF"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-1FEHCV1BVF');
-</script>
+    <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1FEHCV1BVF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-1FEHCV1BVF');
+    </script>
   </head>
   <body class="min-h-screen bg-gray-50">
     <Header />

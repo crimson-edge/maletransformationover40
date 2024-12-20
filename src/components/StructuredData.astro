@@ -4,51 +4,14 @@ const productSchema = {
   "@type": "Product",
   "name": "Male Transformation Over 40 Program",
   "description": "Fitness and nutrition program specifically designed for men over 40",
-  "image": "https://maletransformation.me/images/male-transformation-after.jpg",
   "offers": {
     "@type": "Offer",
     "price": "297.00",
     "priceCurrency": "USD",
     "availability": "https://schema.org/InStock",
     "url": "https://maletransformation.me"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "124"
-  },
-  "review": {
-    "@type": "Review",
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": "5",
-      "bestRating": "5"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "John Smith"
-    },
-    "reviewBody": "This program helped me lose 30 pounds and gain significant muscle mass in just 6 months. The nutrition guidance and workout plans are perfectly tailored for men over 40."
   }
-};
-
-const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Male Transformation Over 40",
-  "url": "https://maletransformation.me",
-  "description": "Expert guidance for men over 40 looking to transform their bodies and lives through proven fitness and nutrition strategies."
-};
-
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Male Transformation Over 40",
-  "url": "https://maletransformation.me",
-  "logo": "https://maletransformation.me/logo.png"
 };
 ---
 
 <script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
-<script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
-<script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />

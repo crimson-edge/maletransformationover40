@@ -8,7 +8,6 @@ import SupplementationSection from '../components/sections/SupplementationSectio
 import NewsletterSignup from '../components/NewsletterSignup.astro';
 import Testimonials from '../components/Testimonials.astro';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import StructuredData from '../components/StructuredData.astro';
 
 const tools = [
   {
@@ -81,7 +80,6 @@ const categories = [...new Set(tools.map(tool => tool.category))];
   title="Male Transformation Over 40 - Expert Fitness & Nutrition Guidance"
   description="Specialized fitness and nutrition guidance for men over 40. Transform your body and optimize your health with age-appropriate strategies and expert support."
 >
-  <StructuredData />
   <HeroSection />
   
   <main class="min-h-screen py-12 bg-gray-50 dark:bg-gray-900">
