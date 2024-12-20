@@ -1,40 +1,16 @@
 ---
-const websiteSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Male Transformation Over 40",
-  "url": "https://maletransformationover40.com",
-  "description": "Expert guidance for men over 40 looking to transform their bodies and lives through proven fitness and nutrition strategies.",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://maletransformationover40.com/search?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-};
-
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Male Transformation Over 40",
-  "url": "https://maletransformationover40.com",
-  "logo": "https://maletransformationover40.com/logo.png",
-  "sameAs": [
-    "https://facebook.com/maletransformationover40",
-    "https://instagram.com/maletransformationover40"
-  ]
-};
-
 const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Male Transformation Over 40 Program",
   "description": "Fitness and nutrition program specifically designed for men over 40",
-  "image": "https://maletransformationover40.com/images/male-transformation-after.jpg",
+  "image": "https://maletransformation.me/images/male-transformation-after.jpg",
   "offers": {
     "@type": "Offer",
     "price": "297.00",
     "priceCurrency": "USD",
-    "availability": "https://schema.org/InStock"
+    "availability": "https://schema.org/InStock",
+    "url": "https://maletransformation.me"
   },
   "aggregateRating": {
     "@type": "AggregateRating",
@@ -55,8 +31,24 @@ const productSchema = {
     "reviewBody": "This program helped me lose 30 pounds and gain significant muscle mass in just 6 months. The nutrition guidance and workout plans are perfectly tailored for men over 40."
   }
 };
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Male Transformation Over 40",
+  "url": "https://maletransformation.me",
+  "description": "Expert guidance for men over 40 looking to transform their bodies and lives through proven fitness and nutrition strategies."
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Male Transformation Over 40",
+  "url": "https://maletransformation.me",
+  "logo": "https://maletransformation.me/logo.png"
+};
 ---
 
+<script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
 <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
 <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
-<script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
