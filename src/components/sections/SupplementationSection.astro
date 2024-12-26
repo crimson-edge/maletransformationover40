@@ -1,7 +1,51 @@
 ---
+import ProductSchema from '../ProductSchema.astro';
+
+const products = [
+  {
+    name: "Gluco Care Full Spectrum",
+    description: "Blood sugar control supplement with natural ingredients for men over 40.",
+    url: "https://www.glucocare.net/dgmain-1#aff=CrimsonEdge",
+    price: 67.00,
+    brand: "Gluco Care",
+    ratingValue: 4.8,
+    reviewCount: 245
+  },
+  {
+    name: "NeuroActiv 6",
+    description: "Mental focus and cognitive enhancement supplement for men over 40.",
+    url: "https://www.digistore24.com/redir/442614/CrimsonEdge/",
+    price: 69.00,
+    brand: "NeuroActiv",
+    ratingValue: 4.7,
+    reviewCount: 189
+  },
+  {
+    name: "Critical T Testosterone Booster",
+    description: "Natural testosterone support supplement for men over 40.",
+    url: "https://0fba2z4bqkxfgbj8674ei7ykcn.hop.clickbank.net",
+    price: 69.95,
+    brand: "Critical T",
+    ratingValue: 4.6,
+    reviewCount: 312
+  },
+  {
+    name: "EndoPump Male Performance Powerhouse",
+    description: "Male vitality and performance supplement for men over 40.",
+    url: "https://d5705-uczcwakyhbs71d2kvp6u.hop.clickbank.net",
+    price: 69.95,
+    brand: "EndoPump",
+    ratingValue: 4.7,
+    reviewCount: 276
+  }
+];
 ---
 
 <section class="py-16 bg-gray-50 dark:bg-gray-900">
+  {products.map(product => (
+    <ProductSchema {...product} />
+  ))}
+  
   <div class="max-w-7xl mx-auto">
     <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Supplementation</h2>
     <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">

@@ -1,0 +1,57 @@
+---
+interface Props {
+  name: string;
+  description: string;
+  url: string;
+  price: number;
+  priceCurrency?: string;
+  image?: string;
+  brand?: string;
+  ratingValue?: number;
+  reviewCount?: number;
+}
+
+const {
+  name,
+  description,
+  url,
+  price,
+  priceCurrency = "USD",
+  image,
+  brand,
+  ratingValue,
+  reviewCount
+} = Astro.props;
+
+// Set price valid until to 1 year from now
+const priceValidUntil = new Date();
+priceValidUntil.setFullYear(priceValidUntil.getFullYear() + 1);
+---
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name,
+  description,
+  url,
+  ...(image && { image }),
+  ...(brand && { brand: {
+    "@type": "Brand",
+    name: brand
+  }}),
+  offers: {
+    "@type": "Offer",
+    price,
+    priceCurrency,
+    availability: "https://schema.org/InStock",
+    url,
+    priceValidUntil: priceValidUntil.toISOString().split('T')[0]
+  },
+  ...(ratingValue && reviewCount && {
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue,
+      reviewCount
+    }
+  })
+})}></script>
